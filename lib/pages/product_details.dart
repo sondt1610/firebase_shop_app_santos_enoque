@@ -94,7 +94,24 @@ class _ProductDetailsState extends State<ProductDetails> {
 //              ==== the size button =====
               Expanded(
                 child: MaterialButton(
-                  onPressed: () {},
+                  onPressed: () {
+                    showDialog(
+                        context: context,
+                        builder: (context) {
+                          return new AlertDialog(
+                            title: Text("Size"),
+                            content: Text("Choose the size"),
+                            actions: <Widget>[
+                              MaterialButton(
+                                onPressed: () {
+                                  Navigator.of(context).pop(context);
+                                },
+                                child: Text("close"),
+                              ),
+                            ],
+                          );
+                        });
+                  },
                   color: Colors.white,
                   textColor: Colors.grey,
                   elevation: 0.2,
@@ -112,7 +129,24 @@ class _ProductDetailsState extends State<ProductDetails> {
               ),
               Expanded(
                 child: MaterialButton(
-                  onPressed: () {},
+                  onPressed: () {
+                    showDialog(
+                        context: context,
+                        builder: (context) {
+                          return new AlertDialog(
+                            title: Text("Color"),
+                            content: Text("Choose the color"),
+                            actions: <Widget>[
+                              MaterialButton(
+                                onPressed: () {
+                                  Navigator.of(context).pop(context);
+                                },
+                                child: Text("close"),
+                              ),
+                            ],
+                          );
+                        });
+                  },
                   color: Colors.white,
                   textColor: Colors.grey,
                   elevation: 0.2,
@@ -130,7 +164,24 @@ class _ProductDetailsState extends State<ProductDetails> {
               ),
               Expanded(
                 child: MaterialButton(
-                  onPressed: () {},
+                  onPressed: () {
+                    showDialog(
+                        context: context,
+                        builder: (context) {
+                          return new AlertDialog(
+                            title: Text("Qty"),
+                            content: Text("Choose the qty"),
+                            actions: <Widget>[
+                              MaterialButton(
+                                onPressed: () {
+                                  Navigator.of(context).pop(context);
+                                },
+                                child: Text("close"),
+                              ),
+                            ],
+                          );
+                        });
+                  },
                   color: Colors.white,
                   textColor: Colors.grey,
                   elevation: 0.2,
@@ -175,6 +226,61 @@ class _ProductDetailsState extends State<ProductDetails> {
                 ),
                 onPressed: () {},
               )
+            ],
+          ),
+          Divider(),
+          ListTile(
+            title: Text("Product details"),
+            subtitle: Text(
+                "It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum."),
+          ),
+          Divider(),
+          Row(
+            children: <Widget>[
+              Padding(
+                padding: EdgeInsets.fromLTRB(12.0, 5.0, 5.0, 5.0),
+                child: Text(
+                  "Product name",
+                  style: TextStyle(color: Colors.grey),
+                ),
+              ),
+              Padding(
+                padding: EdgeInsets.all(5.0),
+                child: (Text(widget.product_detail_name)),
+              ),
+            ],
+          ),
+          Row(
+            children: <Widget>[
+              Padding(
+                padding: EdgeInsets.fromLTRB(12.0, 5.0, 5.0, 5.0),
+                child: Text(
+                  "Product branch",
+                  style: TextStyle(color: Colors.grey),
+                ),
+              ),
+//              REMEMBER TO CREATE THE PRODUCT BRANCH
+              Padding(
+                padding: EdgeInsets.all(5.0),
+                child: (Text('Branch x')),
+              ),
+            ],
+          ),
+//          ADD THE PRODUCT CONDITION
+          Row(
+            children: <Widget>[
+              Padding(
+                padding: EdgeInsets.fromLTRB(12.0, 5.0, 5.0, 5.0),
+                child: Text(
+                  "Product condition",
+                  style: TextStyle(color: Colors.grey),
+                ),
+              ),
+//              REMEMBER TO CREATE THE PRODUCT BRANCH
+              Padding(
+                padding: EdgeInsets.all(5.0),
+                child: (Text('NEW')),
+              ),
             ],
           ),
         ],

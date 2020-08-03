@@ -1,7 +1,7 @@
 import 'package:carousel_pro/carousel_pro.dart';
 import 'package:flutter/material.dart';
 import 'package:shopapptut/components/horizontal_listview.dart';
-import 'file:///C:/workspace/flutter/shopapp_tut/lib/pages/products.dart';
+import 'package:shopapptut/pages/products.dart';
 
 void main() {
   runApp(MyApp());
