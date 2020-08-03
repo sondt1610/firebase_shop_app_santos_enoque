@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:shopapptut/main.dart';
 
 class ProductDetails extends StatefulWidget {
   final product_detail_name;
@@ -24,7 +25,17 @@ class _ProductDetailsState extends State<ProductDetails> {
       appBar: AppBar(
         elevation: 0.1,
         backgroundColor: Colors.red,
-        title: Text('Fash app'),
+        title: InkWell(
+          onTap: () {
+            Navigator.push(
+              context,
+              MaterialPageRoute(
+                builder: (context) => HomePage(),
+              ),
+            );
+          },
+          child: Text('Fash app'),
+        ),
         actions: <Widget>[
           IconButton(
             icon: Icon(
@@ -283,8 +294,118 @@ class _ProductDetailsState extends State<ProductDetails> {
               ),
             ],
           ),
+          Divider(),
+          Padding(
+            padding: EdgeInsets.all(8.0),
+            child: Text('Similar products'),
+          ),
+
+//          SIMILAR PRODUCTS SECTION
+          Container(
+            height: 340.0,
+            child: Similar_products(),
+          )
         ],
       ),
+    );
+  }
+}
+
+class Similar_products extends StatefulWidget {
+  @override
+  _Similar_productsState createState() => _Similar_productsState();
+}
+
+class _Similar_productsState extends State<Similar_products> {
+  var product_list = [
+    {
+      "name": "Blazer",
+      "picture": "images/products/blazer1.jpeg",
+      "old_price": 120,
+      "price": 85,
+    },
+    {
+      "name": "Red dress",
+      "picture": "images/products/dress1.jpeg",
+      "old_price": 100,
+      "price": 50,
+    }
+  ];
+
+  @override
+  Widget build(BuildContext context) {
+    return GridView.builder(
+        itemCount: product_list.length,
+        gridDelegate:
+            SliverGridDelegateWithFixedCrossAxisCount(crossAxisCount: 2),
+        itemBuilder: (context, index) {
+          return Similar_single_prod(
+            prod_name: product_list[index]['name'],
+            prod_pricture: product_list[index]['picture'],
+            prod_old_price: product_list[index]['old_price'],
+            prod_price: product_list[index]['price'],
+          );
+        });
+  }
+}
+
+class Similar_single_prod extends StatelessWidget {
+  final prod_name;
+  final prod_pricture;
+  final prod_old_price;
+  final prod_price;
+
+  Similar_single_prod({
+    this.prod_name,
+    this.prod_pricture,
+    this.prod_old_price,
+    this.prod_price,
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    return Card(
+      child: Hero(
+//          tag: prod_name,
+          tag: Text("hero 1"),
+          child: Material(
+            child: InkWell(
+              onTap: () => Navigator.of(context).push(
+                MaterialPageRoute(
+                  builder: (context) => ProductDetails(
+                    product_detail_name: prod_name,
+                    product_detail_new_price: prod_price,
+                    product_detail_old_price: prod_old_price,
+                    product_detail_picture: prod_pricture,
+                  ),
+                ),
+              ),
+              child: GridTile(
+                  footer: Container(
+                    color: Colors.white,
+                    child: Row(
+                      children: <Widget>[
+                        Expanded(
+                          child: Text(
+                            prod_name,
+                            style: TextStyle(
+                                fontWeight: FontWeight.bold, fontSize: 16.0),
+                          ),
+                        ),
+                        Text(
+                          "\$${prod_price}",
+                          style: TextStyle(
+                              color: Colors.red, fontWeight: FontWeight.bold),
+                        ),
+                      ],
+                    ),
+                  ),
+                  child: Image.asset(
+                    prod_pricture,
+                    fit: BoxFit.cover,
+                  )),
+            ),
+          )),
     );
   }
 }
