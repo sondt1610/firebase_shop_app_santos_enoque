@@ -102,21 +102,30 @@ class _HomePageState extends State<HomePage> {
               onTap: () {},
               child: ListTile(
                 title: Text('Home page'),
-                leading: Icon(Icons.home, color: Colors.red,),
+                leading: Icon(
+                  Icons.home,
+                  color: Colors.red,
+                ),
               ),
             ),
             InkWell(
               onTap: () {},
               child: ListTile(
                 title: Text('My account'),
-                leading: Icon(Icons.person, color: Colors.red,),
+                leading: Icon(
+                  Icons.person,
+                  color: Colors.red,
+                ),
               ),
             ),
             InkWell(
               onTap: () {},
               child: ListTile(
                 title: Text('My orders'),
-                leading: Icon(Icons.shopping_basket, color: Colors.red,),
+                leading: Icon(
+                  Icons.shopping_basket,
+                  color: Colors.red,
+                ),
               ),
             ),
             InkWell(
@@ -130,14 +139,20 @@ class _HomePageState extends State<HomePage> {
               },
               child: ListTile(
                 title: Text('Shopping cart'),
-                leading: Icon(Icons.shopping_cart, color: Colors.red,),
+                leading: Icon(
+                  Icons.shopping_cart,
+                  color: Colors.red,
+                ),
               ),
             ),
             InkWell(
               onTap: () {},
               child: ListTile(
                 title: Text('Favourite'),
-                leading: Icon(Icons.favorite, color: Colors.red,),
+                leading: Icon(
+                  Icons.favorite,
+                  color: Colors.red,
+                ),
               ),
             ),
             Divider(),
@@ -164,15 +179,18 @@ class _HomePageState extends State<HomePage> {
           ],
         ),
       ),
-      body: ListView(
+      body: Column(
         children: <Widget>[
           // image carousel begins here
           image_carousel,
 
           // padding widget
           Padding(
-            padding: EdgeInsets.all(8.0),
-            child: Text('Categories'),
+            padding: EdgeInsets.all(4.0),
+            child: Container(
+              alignment: Alignment.centerLeft,
+              child: Text('Categories'),
+            ),
           ),
 
           //Horizontal list view begins here
@@ -186,12 +204,14 @@ class _HomePageState extends State<HomePage> {
               right: 20.0,
               bottom: 20.0,
             ),
-            child: Text('Recent products'),
+            child: Container(
+              alignment: Alignment.centerLeft,
+              child: Text('Recent products'),
+            ),
           ),
 
           // grid view
-          Container(
-            height: 320.0,
+          Flexible(
             child: Product(),
           ),
         ],
