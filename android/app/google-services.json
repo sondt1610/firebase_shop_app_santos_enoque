@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "115336254501",
+    "firebase_url": "https://ecommerce-682f9.firebaseio.com",
+    "project_id": "ecommerce-682f9",
+    "storage_bucket": "ecommerce-682f9.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:115336254501:android:96363b96bb27bcb6a41bcc",
+        "android_client_info": {
+          "package_name": "com.example.shopapptut"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "115336254501-8s5hv1nnoo2hnjul3pnf835p4ov9gtkr.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAvFM64MTMoE6smc2eeasNmImw_iLVA1L8"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "115336254501-8s5hv1nnoo2hnjul3pnf835p4ov9gtkr.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
